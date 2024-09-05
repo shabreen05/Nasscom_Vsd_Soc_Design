@@ -66,7 +66,7 @@ OpenLane abstracts the underlying open source utilities, and allows users to con
 
 
 # OpenLane Architecture
-![OpenLane Flow](img/openlane-flow.png)
+![OpenLane Flow](img_2/openlane-flow.png)
 
 
 
@@ -87,7 +87,7 @@ OpenLane abstracts the underlying open source utilities, and allows users to con
 * Since, the PDK contained variety of informations, and so they were distributed only under NDAs (Non-Disclosure Agreements) which made it in-accessible to the public.
 * Recently, Google worked out an agreement with skywater to open-source the PDK for the 130nm process by skywater Technology, as a result on 30 June 2020 Google released the first ever open-source PDK.
 
-![image](img/opensource.png)
+![image](img_2/opensource.png)
 
 * ASIC design is a complex step that involves tons of steps, various methodologies and respective EDA tools which are all required for successful ASIC implementation which is achieved though an ASIC flow which is nothing but a piece of software that pulls different tools togather to carry out the design process.
 
@@ -97,37 +97,37 @@ OpenLane abstracts the underlying open source utilities, and allows users to con
 
 * The main objective of the ASIC Design Flow is to take the design from the RTL (Register Transfer Level) all the way to the GDSII, which is the format used for the final fabrication layout.
 
-![image](img/RTL_GDS.png)
+![image](img_2/RTL_GDS.png)
 
 * Synthesis is the process of convertion or translation of design RTL into circuits made out of Standard Cell Libraries (SCL) the resultant circuit is described in HDL and is usually reffered to as the Gate-Level Netlist.
 * Gate-Level Netlist is functionally equivalent to the RTL.
 
-![image](img/synthesis.png)
+![image](img_3/synthesis.png)
 
 * The fundemental building blocks which are the standard cells have regular layouts.
 * Each cell has different views/models which are utilised by different EDA tools like liberty view with electrical models of the cells, HDL behavioral models, SPICE or CDL views of the cells, Layout view which include GDSII view which is the detailed view and LEF view which is the abstract view.
 
-![image](img/synthesis_2.png)
+![image](img_3/synthesis_2.png)
 
 * Chip Floor Planning
 
-![image](img/floor_powerplanning.png)
+![image](img_1/floor_powerplanning.png)
 
 * Macro Floor Planning
 
-![image](img/floor_powerplan.png)
+![image](img_1/floor_powerplan.png)
 
 * Power Planning typically uses upper metal layers for power distribution since thay are thicker than lower metal layers and so have lower resistance and PP is done to avoid electron migration and IR drops.
 
-![image](img/floor_plan3.png)
+![image](img_1/floor_plan3.png)
 
 * Placement
 
-![image](img/placement.png)
+![image](img_2/placement.png)
 
 * Global placement provide approximate locations for all cells based on connectivity but in this stage the cells may be overlapped on each other and in detailed placement the positions obtained from global placements are minimally altered to make it legal (non-overlapping and in site-rows)
 
-![image](img/placement_2.png)
+![image](img_2/placement_2.png)
 
 * Clock Tree Synthesis
 
@@ -136,11 +136,11 @@ OpenLane abstracts the underlying open source utilities, and allows users to con
 * Clock skew is the time difference in arrival of clock at different components.
 * Routing
 
-![image](img/Routing.png)
+![image](img_2/Routing.png)
 
 * skywater PDK has 6 routing layers in which the lowest layer is called the local interconnect layer which is a Titanium Nitride layer the following 5 layers are all Aluminium layers.
 
-![stackup](img/skywater_pdk.png)
+![stackup](img_3/skywater_pdk.png)
 
 * Global and Detailed Routing
 
@@ -151,7 +151,7 @@ OpenLane abstracts the underlying open source utilities, and allows users to con
 * Layout Vs Schematic (LVS) which verifies that the final layout functionality matches the gate-level netlist that we started with.
 * Static Timing Analysis (STA) to verify that the design runs at the designated clock frequency.
 
-![image](img/sign_off.png)
+![image](img_3/sign_off.png)
 
 
 
@@ -229,7 +229,7 @@ After a successful ```make``` when you run ```make test``` you will have a ```Ba
 - We can find this file in OpenLane/designs/picorv32a 
 - Copy the relevant files from the picorv32a repository into the designs/picorv32a directory.  
 
-![this](img/picorv32a_file.png)
+![this](img_2/picorv32a_file.png)
 
 # DAY 1 tasks:- 
 1. Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
@@ -245,7 +245,7 @@ package require openlane 0.9
 prep -design picorv32a
 run_synthesis
 ```
-![this](img/run_synthesis.png)
+![this](img_2/run_synthesis.png)
 
 
 
@@ -255,8 +255,8 @@ cd /home/khan/OpenLane/designs/picorv32a/runs/RUN_2024.08.24_15.30.41/results/sy
 less picorv32a.v
 
 ```
-![this](img/netlist_1.png)
-![this](img/netlist_2.png)
+![this](img_1/netlist_1.png)
+![this](img_1/netlist_2.png)
 
 
 **To view the report:**
@@ -267,8 +267,8 @@ cd synthesis
 less 1-synthesis.AREA_0.stat.rpt
 
 ```
-![this](img/report_1.png)
-![this](img/report_2.png)
+![this](img_2/report_1.png)
+![this](img_2/report_2.png)
 
 ```
      63. Printing statistics.
@@ -406,7 +406,7 @@ Number of D flip flop: 1613
 
 ![Core and Die section of a Chip](img/Core_and_Die.png)
 
-![Utilization Factor](img/Utilization_Factor.png)
+![Utilization Factor](img_3/Utilization_Factor.png)
 
 
 ```
@@ -467,7 +467,7 @@ prep -design picorv32a
 run_synthesis
 run_floorplan
 ```
-![this](./img/floorplan_synthesis.png)
+![this](img_1/floorplan_synthesis.png)
 
 
 **config.tcl file**
@@ -475,7 +475,7 @@ run_floorplan
 cd ~/OpenLane/designs/picorv32a 
 less config.tcl
 ```
-![this](./img/config.png)
+![this](img/config.png)
 
 **floorplan.tcl**
 ```
@@ -483,7 +483,7 @@ cd ~/OpenLane/configuration
  less floorplan.tcl
 
 ```
-![this](./img/floorplan.png)
+![this](img_1/floorplan.png)
 
 
 ## Task 2.
@@ -493,7 +493,7 @@ cd ~/OpenLane/designs/picorv32a/runs/RUN_2024.08.25_17.05.46/results/floorplan$ 
 ```
 
 ![this](img/directory.png)
-![this](img/floorplan_result.png)
+![this](img_1/floorplan_result.png)
 
 As we get 
 UNITS DISTANCE MICRONS 1000 ;
@@ -533,10 +533,10 @@ magic -T /home/khan/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../
 
 
 ```
-![this](img/magic.png)
+![this](img_1/magic.png)
 
 ![this](img/directory_2.png)
-![this](img/floorplan_inmagic.png)
+![this](img_1/floorplan_inmagic.png)
 
 # Design Alignment Instructions
 
@@ -555,7 +555,7 @@ magic -T /home/khan/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../
 3. Press Z to zoom in on the selected area.
 
 
-![this](img/zooming_specific_area.png)
+![this](img_3/zooming_specific_area.png)
 
 ## Getting Details of a Cell:
 
@@ -582,7 +582,7 @@ run_floorplan
 run_placement
 
 ```
-![this](img/run_placement.png)
+![this](img_2/run_placement.png)
 
 ## Task 5
 
@@ -592,7 +592,7 @@ cd ~/OpenLane/designs/picorv32a/runs/RUN_2024.08.30_17.25.46/results/placement
 magic -T /home/khan/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
 
 ```
-![this](img/magic_plcement.png)
+![this](img_1/magic_plcement.png)
 
 
 Commands to exit from current run
@@ -627,7 +627,7 @@ A typical standard cell characterization flow that is followed in the industry i
 
 Now all these 8 steps are fed in together as a configuration file to a characterization software called GUNA. This software generates timing, noise, power models. These .libs are classified as Timing characterization, power characterization and noise characterization.
 
-![GUNA](img/GUNA.png) 
+![GUNA](img_1/GUNA.png) 
 
 
 
@@ -809,11 +809,11 @@ magic -T ./libs/sky130A.tech sky130_inv.mag &
 
 NMOS IDENTIFIED
 
-![this](./img/NMOS.png)
+![this](img_1/NMOS.png)
 
 PMOS IDENTIFIED
 
-![this](./img/PMOS.png)
+![this](img_2/PMOS.png)
 
 Output Y connectivity to PMOS and NMOS drain verified
 
@@ -821,11 +821,11 @@ Output Y connectivity to PMOS and NMOS drain verified
 
 PMOS source connectivity to VDD (here VPWR) verified
 
-![this](img/PMOS_VDD.png)
+![this](img_2/PMOS_VDD.png)
 
 NMOS source connectivity to VSS (here VGND) verified
 
-![this](img/NMOS_GND.png)
+![this](img_1/NMOS_GND.png)
 
 Deleting necessary layout part to see DRC error
 
@@ -853,7 +853,7 @@ ext2spice
 
 ```
 
-![this](img/tycon_window.png)
+![this](img_3/tycon_window.png)
 
 
 
@@ -863,12 +863,12 @@ ext2spice
 
 Measuring unit distance in layout grid
 
-![this](img/layout_grid.png)
+![this](img_1/layout_grid.png)
 
 
 Final edited spice file ready for ngspice simulation
 
-![this](img/spice_file.png)
+![this](img_3/spice_file.png)
 
 
 ## Task 5
@@ -882,15 +882,15 @@ plot y vs time a
 
 ```
 
-![this](img/ngspice_directory.png)
+![this](img_1/ngspice_directory.png)
 
-![this](img/ngspice.png)
+![this](img_1/ngspice.png)
 
-![this](img/plot.png)
+![this](img_2/plot.png)
 
 Plot y Vs time a
 
-![this](img/plot_y_vs_a.png)
+![this](img_2/plot_y_vs_a.png)
 
 ## Rise transition time calculation
 
@@ -909,20 +909,20 @@ Here Blue line represent input and red line represent Output
 
 ### Time taken for output to rise to 20%
 
-![this](img/output_rise20.png)
+![this](img_2/output_rise20.png)
 
 **Graph**
 
-![this](img/output_grph_rise20.png)
+![this](img_2/output_grph_rise20.png)
 
 
 ### Time taken for output to rise to 80%
 
-![this](img/output_rise80.png)
+![this](img_2/output_rise80.png)
 
 **Graph**
 
-![this](img/output_grph_rise80.png)
+![this](img_2/output_grph_rise80.png)
 
 
 ```math
@@ -944,20 +944,20 @@ Fall\ transition\ time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ ta
 
 ### Time taken for output to fall to 20%
 
-![this](img/output_fall20.png)
+![this](img_2/output_fall20.png)
 
 **Graph**
 
-![this](img/output_grph_fall20.png)
+![this](img_2/output_grph_fall20.png)
 
 
 ### Time taken for output to fall to 80%
 
-![this](img/output_fall80.png)
+![this](img_2/output_fall80.png)
 
 **Graph**
 
-![this](img/output_grph_fall80.png)
+![this](img_2/output_grph_fall80.png)
 
 
 
@@ -979,20 +979,20 @@ Rise\ Cell\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ 
 
 ### Time taken for output to Rise to 50%
 
-![this](img/output_50.png)
+![this](img_2/output_50.png)
 
 **Graph**
 
-![this](img/output_grph_50.png)
+![this](img_2/output_grph_50.png)
 
 
 ### Time taken for intput to fall to 50%
 
-![this](img/input_50.png)
+![this](img_1/input_50.png)
 
 **Graph**
 
-![this](img/input_grph_50.png)
+![this](img_1/input_grph_50.png)
 
 ```math
 Rise\ Cell\ Delay = 2.20769−2.15 = 0.05769 \ ns = 57.69\ ps
@@ -1013,20 +1013,20 @@ Fall\ Cell\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ 
 
 ### Time taken for output to Fall to 50%
 
-![this](img/output_f50.png)
+![this](img_2/output_f50.png)
 
 **Graph**
 
-![this](img/output_grph_f50.png)
+![this](img_2/output_grph_f50.png)
 
 
 ### Time taken for intput to Rise to 50%
 
-![this](img/input_r50.png)
+![this](img_1/input_r50.png)
 
 **Graph**
 
-![this](img/input_grph_r50.png)
+![this](img_1/input_grph_r50.png)
 
 ```math
 Fall\ Cell\ Delay = 4.07407−4.04882=0.02525\ ns = 25.25 \ ps
@@ -1063,25 +1063,25 @@ magic -d XR
 ```
 
 
-![this](img/sky_1.png)
+![this](img_3/sky_1.png)
 
-![this](img/sky_2.png)
+![this](img_3/sky_2.png)
 
-![this](img/sky_3.png)
+![this](img_3/sky_3.png)
 
-![this](img/sky_4.png)
+![this](img_3/sky_4.png)
 
 
 Screenshot of .magicrc file
 
-![this](img/magicrc.png)
+![this](img_1/magicrc.png)
 
 
 ## Incorrectly implemented poly.9 simple rule correction
 
 Screenshot of poly rules
 
-![this](img/poly9_rule.png)
+![this](img_2/poly9_rule.png)
 
 
 
@@ -1090,19 +1090,19 @@ open met3.mag file from file menu
 
 
 ```
-![this](img/met3.png)
+![this](img_1/met3.png)
 
-![this](img/met_1.png)
+![this](img_1/met_1.png)
 
-![this](img/met_2.png)
+![this](img_1/met_2.png)
 
-![this](img/met_3.png)
+![this](img_1/met_3.png)
 
-![this](img/met_4.png)
+![this](img_1/met_4.png)
 
-![this](img/met_5.png)
+![this](img_1/met_5.png)
 
-![this](img/met_6.png)
+![this](img_1/met_6.png)
 
 
 
@@ -1114,29 +1114,29 @@ Now we open poly.mag file from file menu
 
 ```
 
-![this](img/poly_1.png)
+![this](img_2/poly_1.png)
 
-![this](img/poly_2.png)
+![this](img_2/poly_2.png)
 
-![this](img/poly_3.png)
+![this](img_2/poly_3.png)
 
-![this](img/poly_4.png)
+![this](img_2/poly_4.png)
 
 
 Incorrectly implemented poly.9 rule no drc violation even though spacing < 0.48u
 
 
 
-![this](img/poly_5.png)
+![this](img_2/poly_5.png)
 
 
 
 ### Updated sky130A.tech File
 
 
-![this](img/sky130Afile.png)
+![this](img_3/sky130Afile.png)
 
-![this](img/sky130A_2.png)
+![this](img_3/sky130A_2.png)
 
 
 
@@ -1154,11 +1154,11 @@ drc why
 
 ```
 
-![this](img/poly9up_1.png)
+![this](img_2/poly9up_1.png)
 
-![this](img/poly9up_2.png)
+![this](img_2/poly9up_2.png)
 
-![this](img/poly9up_3.png)
+![this](img_2/poly9up_3.png)
 
 
 ## Lab exercise to implement poly resistor spacing to diff and tap
@@ -1181,7 +1181,7 @@ Open difftab.mag file  from file menu
 
 ### Updated sky130A.tech File
 
-![this](img/sky130A_3.png)
+![this](img_3/sky130A_3.png)
 
 
 
@@ -1208,7 +1208,7 @@ drc why
 
 Screenshot of nwell rules
 
-![this](img/nwell_rule.png)
+![this](img_1/nwell_rule.png)
 
 
 ```
@@ -1217,16 +1217,16 @@ Open nweel.mag file from file menu
 
 ```
 
-![this](img/Nwell.png)
+![this](img_1/Nwell.png)
 
 
 
 ### Updated sky130A.tech File
 
 
-![this](img/sky130A_4.png)
+![this](img_3/sky130A_4.png)
 
-![this](img/sky130A_5.png)
+![this](img_3/sky130A_5.png)
 
 
 
@@ -1249,7 +1249,7 @@ drc why
 ```
 
 
-![this](img/Nwell_drc.png)
+![this](img_1/Nwell_drc.png)
 
 
 
@@ -1426,15 +1426,15 @@ grid 0.46um 0.34um 0.23um 0.17um
 Screenshot of commands run
 
 
-![this](img/ss_41.png)
+![this](img_3/ss_41.png)
 
-![this](img/ss_42.png)
+![this](img_3/ss_42.png)
 
 
 
 Condition 1 
 
-![this](img/lie_on_intersection.png)
+![this](img_1/lie_on_intersection.png)
 
 ```
 The input and output ports of the standard cell  lie on the intersection of the vertical and horizontal tracks.
@@ -1447,7 +1447,7 @@ The input and output ports of the standard cell  lie on the intersection of the 
 Condition 2
 
 
-![this](img/width_odd.png)
+![this](img_3/width_odd.png)
 
 ```
 
@@ -1464,9 +1464,9 @@ I.e number of grid box along widths  is odd and here it is  3.
 
 Condition 3
 
-![this](img/hight_even_1.png)
+![this](img_1/hight_even_1.png)
 
-![this](img/height_even_2.png)
+![this](img_1/height_even_2.png)
 
 ```
 
@@ -1495,9 +1495,9 @@ save sky130_vsdinv.mag
 
 ```
 
-![this](img/save_cus.png)
+![this](img_3/save_cus.png)
 
-![this](img/save_exit.png)
+![this](img_3/save_exit.png)
 
 
 Command to open the newly saved layout
@@ -1530,7 +1530,7 @@ lef write
 
 ```
 
-![this](img/lef_file.png)
+![this](img_1/lef_file.png)
 
 
 Lef file
@@ -1545,13 +1545,13 @@ ls -ltr
 less sky130_vsdinv.lef
 
 ```
-![this](img/lef_1.png)
+![this](img_1/lef_1.png)
 
-![this](img/lef_2.png)
+![this](img_1/lef_2.png)
 
-![this](img/new_le.png)
+![this](img_1/new_le.png)
 
-![this](img/new_lef.png)
+![this](img_1/new_lef.png)
 
 
 
@@ -1590,15 +1590,15 @@ cp sky130_vsdinv.lef /home/khan/OpenLane/designs/picorv32a/src
 
 ```
 
-![this](img/ss_421.png)
+![this](img_3/ss_421.png)
 
-![this](img/ss_422.png)
+![this](img_3/ss_422.png)
 
 Now sky130_vsdinv.lef file pressent in src 
 
-![this](img/ss423.png)
+![this](img_3/ss423.png)
 
-![this](img/ss_424.png)
+![this](img_3/ss_424.png)
 
 
 
@@ -1715,9 +1715,9 @@ run_synthesis
 
 Comparing to previously noted run values area has increased 
 
-![image](img/synthis%20_res_imp.png)
+![image](img_3/synthis%20_res_imp.png)
 
-![image](img/synthis%20_res_imp1.png)
+![image](img_3/synthis%20_res_imp1.png)
 
 
 ## Task 8: 
@@ -1745,9 +1745,9 @@ tap_decap_or
 
 
 
-![image](img/floorplane_day4_1.png)
+![image](img_1/floorplane_day4_1.png)
 
-![image](img/floorplan_day4_2.png)
+![image](img_1/floorplan_day4_2.png)
 
 
 
@@ -1758,7 +1758,7 @@ Now that floorplan is done we can do placement using following command
 run_placement
 
 ```
-![image](img/placement_day4.png)
+![image](img_2/placement_day4.png)
 
 
 Commands to load placement def in magic in another terminal
@@ -1776,11 +1776,11 @@ magic-T /home/khan/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read ../../tm
 
 Screenshot of placement def in magic
 
-![image](img/magic_d41.png)
+![image](img_1/magic_d41.png)
 
 Screenshot of custom inverter inserted in placement def with proper abutment
 
-![image](img/magic_d42.png)
+![image](img_1/magic_d42.png)
 
 Command for tkcon window to view internal layers of cells
 
@@ -1789,7 +1789,7 @@ expand
 
 ```
 
-![image](img/magic_d43.png)
+![image](img_1/magic_d43.png)
 
 
 
@@ -1835,14 +1835,14 @@ run_synthesis
 
 Newly created pre_sta.conf for STA analysis in openlane directory
 
-![image](img/sta.conf.png)
+![image](img_3/sta.conf.png)
 
 
 Newly created my_base.sdc for STA analysis 
 
 
 
-![image](img/my_base.png)
+![image](img_1/my_base.png)
 
 
 
@@ -2228,7 +2228,7 @@ The algorithm assigns labels to neighboring grid cells around the source, increm
 
 However, the Lee algorithm has limitations. It essentially constructs a maze and then numbers its cells from the source to the target. While effective for routing between two pins, it can be time-consuming when dealing with millions of pins. There are alternative algorithms that address similar routing challenges.
 
-![routing](img/routing_1.png)
+![routing](img_2/routing_1.png)
 
 # Design Rule Check (DRC)
 
@@ -2354,11 +2354,11 @@ The design can be viewed on magic within results/routing directory. Run the foll
 magic -T /home/khan/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read tmp/merged.nom.lef def read results/routing/picorv32a.def &
 
 ```
-![post_routing_picorv32a](img/post_routing_picorv32a.png)
+![post_routing_picorv32a](img_2/post_routing_picorv32a.png)
 
 When we zoom in or type ```getcell sky130_vsdinv``` and ```expand``` on the Tckon window
 
-![post_routing_vsdinvinstance](img/post_routing_vsdinvinstance.png)
+![post_routing_vsdinvinstance](img_2/post_routing_vsdinvinstance.png)
 
 After routing I checked for all the stats and those are as follows
 
@@ -2369,13 +2369,13 @@ The cell to flop ratio is 0.164
 
 ### Synthesis Log
 
-![post_routing_stat](img/synthis%20_log1.png)
-![post_routing_stat](img/synthis_log_2.png)
+![post_routing_stat](img_3/synthis%20_log1.png)
+![post_routing_stat](img_3/synthis_log_2.png)
 
 
 ### STA Log
 
-![post_routing_stalog](img/sta.png)
+![post_routing_stalog](img_3/sta.png)
 
 # Openlane Interactive flow:
 
@@ -2400,44 +2400,3 @@ make mount
 ./flow.tcl -design picorv32a
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Nasscom_Vsd_Soc_Design
-# Nasscom_Vsd_Soc_Design
-# Nasscom_Vsd_Soc_Design
-# Nasscom_Vsd_Soc_Design
-# Nasscom_Vsd_Soc_Design
-# Nasscom_Vsd_Soc_Design
-# Nasscom_Vsd_Soc_Design
-# Nasscom_Vsd_Soc_Design
-# soc_Design
