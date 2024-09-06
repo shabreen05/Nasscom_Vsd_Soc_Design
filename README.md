@@ -21,13 +21,11 @@
 - [Day - 1 Inception of Open-Source EDA, OpenLane and Sky130 PDK](#day---1-inception-of-open-source-eda-openlane-and-sky130-pdk)
 - [Day - 2 Good Floor plan Vs Bad floor plan](#day---2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
 - [Day - 3 Design Library Cells using magic](#day--3-design-library-cell-using-magic-layout-and-ngspice-charcterization)
-- [Day - 4 Timing Analysis and Clock Tree Synthesis](#day-4-timing-analysis-and-clock-tree-synthesis-cts)
+- [Day - 4 Timing Analysis and Clock Tree Synthesis](#day---4-timing-analysis-and-clock-tree-synthesis-cts)
 - [Day - 5 Final Steps in RTL2GDS](#day-5--final-steps-in-rtl2gds)
-- [Acknowledgement](#acknowledgement)
-- [References](#references)
 
-## Day - 1 
-## Inception of Open-Source EDA, OpenLane and Sky130 PDK
+
+## Day - 1 Inception of Open-Source EDA, OpenLane and Sky130 PDK
 ### Introduction to RISC-V
 RISC-V is an open-source instruction set architecture (ISA) that is adopted in the world of computer architecture and processor design. It was originally developed at the University of California, Berkeley in 2010 and has since grown into a global collaboration of researchers and industry experts. The key characteristic of RISC-V is its simplicity and modularity. It follows the Reduced Instruction Set Computer (RISC) design philosophy, which emphasizes a small and streamlined set of instructions that are easy to decode and execute. RISC-V offers a base set of instructions, called the "RV32I," which provides essential operations for general-purpose computing. Additional optional instruction sets, such as RV32F for single-precision floating-point operations or RV64G for 64-bit computing, can be added to meet specific application requirements. One of the major advantages of RISC-V is its open nature. The ISA specifications, reference implementations, and software tools are freely available, allowing anyone to study, modify, or implement their own RISC-V processors without licensing fees or restrictions. This openness has fostered a vibrant ecosystem of hardware designers, software developers, and researchers who collaborate and innovate around the RISC-V architecture.
 
@@ -1253,7 +1251,7 @@ drc why
 
 
 
-## DAY 4  Timing Analysis and Clock Tree Synthesis (CTS)
+## DAY - 4 Timing Analysis and Clock Tree Synthesis (CTS)
 
 
 # Timing Modeling Using Delay Tables and Converting Grid Info to Track Info
