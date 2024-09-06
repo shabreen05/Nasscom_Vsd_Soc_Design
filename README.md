@@ -1,4 +1,4 @@
-#  SoC Design and Planning Training
+#  SoC Design 
 
 
 ## Lessons Learned
@@ -2242,7 +2242,7 @@ Minimum pitch of the wire To solve signal short violation, we take the metal lay
 Via width
 via spacing
 
-![layout](img/layout.png)
+![layout](img_1/layout.png)
 
 Unlike the general ASIC flow, Power Distribution Network generation is not a part of floorplan run in OpenLANE. PDN must be generated after CTS and post-CTS STA analyses:
 
